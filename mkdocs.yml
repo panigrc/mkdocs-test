@@ -1,0 +1,9 @@
+site_name: Marshmallow Generator
+nav:
+  - Introduction: 'index.md'
+  - 'about.md'
+  - 'Issue Tracker': 'https://example.com/'
+use_directory_urls: false
+theme:
+  name: null
+  custom_dir: 'theme/'

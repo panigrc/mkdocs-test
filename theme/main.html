@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang=de>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+	{%- for path in config.extra_css %}
+	<link href="{{ path | url }}" rel="stylesheet">
+	{%- endfor %}
+</head>
+
+<body bgcolor=#F5ECC8 link=#477CEF vlink=#477CEF alink=#FFFFFF>
+	<div style="text-align: left; color: #8e8f1b;">
+		<img src="{{ base_url|url }}/img/Animation2.gif" alt="" width="100" height="100">Museum im MakerSpace Minden
+	</div>
+	{% if nav|length > 1 %}
+	{% for nav_item in nav %}
+	<span class="{% if nav_item.active %}current{% endif %}">
+		<a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
+	</span>
+	{% endfor %}
+	{% endif %}
+
+	{{ page.content }}
+
+	{%- for script in config.extra_javascript %}
+	{{ script | script_tag }}
+	{%- endfor %}
+</body>
+
+</html>
